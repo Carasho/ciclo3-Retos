@@ -28,14 +28,24 @@ public class ComputerServicio {
             return computerRepositorio.save(computer);
         } else{ // si el objeto viene con numId se verifica si existe o no
             Optional <Computer> consulta = computerRepositorio.getComputer(computer.getId());
-            if (consulta.isEmpty()) {
-                return computerRepositorio.save(computer);
-            } else {
-                return computer;
-            } 
+            if (consulta.isEmpty()) {// si el objeto es diferente a null   
+                if (computer.getName() != null) {
+                        consulta.get().setName(computer.getName());
+                    }
+                if (computer.getDescription() !=null) {
+                        consulta.get().setName(computer.getDescription());
+                    }
+                if (computer.getBrand() !=null) {
+                        consulta.get().setBrand(computer.getBrand());
+                    } 
+                if (computer.getYear() !=null) {
+                        consulta.get().setYear(computer.getYear());
+                    }
+                    return computerRepositorio.save(consulta.get());
+                } 
+            }
+            return computer;
         }
-     
-    } 
 
     public Computer update(Computer computer){
         if (computer.getId() != null){// si el objeto viene con numId se verifica si existe o no

@@ -30,11 +30,17 @@ public class ReservationServicio {
             Optional <Reservation> consulta = reservationRepositorio.getReservation(reservation.getIdReservation());
             if (consulta.isEmpty()) {
                 return reservationRepositorio.save(reservation);
-            } else {
-                return reservation;
             } 
-        }
-     
+            if (reservation.getStartDate() != null) {
+                    consulta.get().setStartDate(reservation.getStartDate());
+                }
+            if (reservation.getStatus() !=null) {
+                    consulta.get().setStatus(reservation.getStatus());
+                }
+            if (reservation.getDevolutionDate() !=null) {
+                    consulta.get().setDevolutionDate(reservation.getDevolutionDate());
+                }   
+        } return reservation;
     } 
 
     public Reservation update(Reservation reservation){

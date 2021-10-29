@@ -30,9 +30,21 @@ public class ClientServicio {
             Optional <Client> consulta = clientRepositorio.getClient(client.getIdClient());
             if (consulta.isEmpty()) {
                 return clientRepositorio.save(client);
-            } else {
-                return client;
             } 
+            if (client.getName() != null) {
+                consulta.get().setName(client.getName());
+            }
+            if (client.getEmail() !=null) {
+                consulta.get().setName(client.getEmail());
+            }
+            if (client.getAge() !=null) {
+                consulta.get().setAge(client.getAge());
+            }
+            if (client.getPassword() !=null) {
+                consulta.get().setPassword(client.getPassword());
+            } 
+            return client;
+
         }
      
     } 

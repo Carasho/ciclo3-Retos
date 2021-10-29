@@ -29,13 +29,15 @@ public class CategoryServicio {
         } else{ // si el objeto viene con numId se verifica si existe o no
             Optional <Category> consulta = categoryRepositorio.getCategory(category.getId());
             if (consulta.isEmpty()) {
-                return categoryRepositorio.save(category);
-            } else {
-                return category;
-            } 
-        }
-     
+                if (category.getName() != null) {
+                    consulta.get().setName(category.getName());
+                }
+                if (category.getDescription() !=null) {
+                    consulta.get().setName(category.getDescription());
+                }
+            } return category;
     } 
+}
 
     public Category update(Category category){
         if (category.getId() != null){// si el objeto viene con numId se verifica si existe o no

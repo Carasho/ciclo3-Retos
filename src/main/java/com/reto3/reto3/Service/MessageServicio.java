@@ -30,11 +30,12 @@ public class MessageServicio {
             Optional <Message> consulta = messageRepositorio.getMessage(message.getIdMessage());
             if (consulta.isEmpty()) {
                 return messageRepositorio.save(message);
-            } else {
-                return message;
             } 
+            if (message.getMessageText() != null) {
+                consulta.get().setMessageText(message.getMessageText());
+                }  
+             return message;
         }
-     
     } 
 
     public Message update(Message message){
