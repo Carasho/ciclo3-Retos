@@ -35,7 +35,7 @@ public class ClientServicio {
                 consulta.get().setName(client.getName());
             }
             if (client.getEmail() !=null) {
-                consulta.get().setName(client.getEmail());
+                consulta.get().setEmail(client.getEmail());
             }
             if (client.getAge() !=null) {
                 consulta.get().setAge(client.getAge());
@@ -57,7 +57,7 @@ public class ClientServicio {
                     consulta.get().setName(client.getName());
                 }
                 if (client.getEmail() !=null) {
-                    consulta.get().setName(client.getEmail());
+                    consulta.get().setEmail(client.getEmail());
                 }
                 if (client.getAge() !=null) {
                     consulta.get().setAge(client.getAge());

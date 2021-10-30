@@ -29,6 +29,7 @@ public class ReservationServicio {
         } else{ // si el objeto viene con numId se verifica si existe o no
             Optional <Reservation> consulta = reservationRepositorio.getReservation(reservation.getIdReservation());
             if (consulta.isEmpty()) {
+                reservation.setStatus("created");
                 return reservationRepositorio.save(reservation);
             } 
             if (reservation.getStartDate() != null) {

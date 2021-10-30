@@ -33,7 +33,7 @@ public class CategoryServicio {
                     consulta.get().setName(category.getName());
                 }
                 if (category.getDescription() !=null) {
-                    consulta.get().setName(category.getDescription());
+                    consulta.get().setDescription(category.getDescription());
                 }
             } return category;
     } 
@@ -47,7 +47,7 @@ public class CategoryServicio {
                     consulta.get().setName(category.getName());
                 }
                 if (category.getDescription() !=null) {
-                    consulta.get().setName(category.getDescription());
+                    consulta.get().setDescription(category.getDescription());
                 }
                 return categoryRepositorio.save(consulta.get());
             } 

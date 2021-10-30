@@ -19,12 +19,12 @@ public class Message implements Serializable{
     // relaciones
     @ManyToOne
     @JoinColumn (name = "id")
-    @JsonIgnoreProperties ({"messages","reservation"})
+    @JsonIgnoreProperties ({"messages","reservations"})
     private Computer computer;
 
     @ManyToOne
     @JoinColumn (name = "idClient")
-    @JsonIgnoreProperties ({"messages","reservation"})
+    @JsonIgnoreProperties ({"messages","reservations"})
     private Client client;
 
     
@@ -46,8 +46,8 @@ public class Message implements Serializable{
     public Computer getComputer() {
         return computer;
     }
-    public void setComputer(Computer computer) {
-        this.computer = computer;
+    public void setComputer(Computer computers) {
+        this.computer = computers;
     }
     public Client getClient() {
         return client;

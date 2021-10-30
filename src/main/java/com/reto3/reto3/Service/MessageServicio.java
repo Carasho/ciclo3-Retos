@@ -31,6 +31,9 @@ public class MessageServicio {
             if (consulta.isEmpty()) {
                 return messageRepositorio.save(message);
             } 
+            if (message.getIdMessage() !=null) {
+                consulta.get().setIdMessage(message.getIdMessage());
+            }
             if (message.getMessageText() != null) {
                 consulta.get().setMessageText(message.getMessageText());
                 }  

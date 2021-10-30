@@ -2,6 +2,7 @@ package com.reto3.reto3.Model;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -14,8 +15,8 @@ public class Reservation implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private String startDate; 
-    private String devolutionDate;
+    private Date startDate; 
+    private Date devolutionDate;
     private String status;
     // relaciones
     @ManyToOne
@@ -37,16 +38,16 @@ public class Reservation implements Serializable{
     public void setIdReservation(Integer idReservation) {
         this.idReservation = idReservation;
     }
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-    public String getDevolutionDate() {
+    public Date getDevolutionDate() {
         return devolutionDate;
     }
-    public void setDevolutionDate(String devolutionDate) {
+    public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
     public String getStatus() {

@@ -33,7 +33,7 @@ public class ComputerServicio {
                         consulta.get().setName(computer.getName());
                     }
                 if (computer.getDescription() !=null) {
-                        consulta.get().setName(computer.getDescription());
+                        consulta.get().setDescription(computer.getDescription());
                     }
                 if (computer.getBrand() !=null) {
                         consulta.get().setBrand(computer.getBrand());
@@ -55,7 +55,7 @@ public class ComputerServicio {
                     consulta.get().setName(computer.getName());
                 }
                 if (computer.getDescription() !=null) {
-                    consulta.get().setName(computer.getDescription());
+                    consulta.get().setDescription(computer.getDescription());
                 }
                 if (computer.getBrand() !=null) {
                     consulta.get().setBrand(computer.getBrand());
